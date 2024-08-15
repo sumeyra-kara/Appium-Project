@@ -30,6 +30,7 @@ public class _01_Calculator {
         capabilities.setCapability(MobileCapabilityType.VERSION,"11.0");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel_2");
 
+
         // application capabilities
         capabilities.setCapability("appPackage","com.google.android.calculator");
         capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
@@ -50,7 +51,7 @@ public class _01_Calculator {
 
         MobileElement number6 = driver.findElement(By.className("android.widget.TextView"));
         System.out.println("number6.getText() = " + number6.getText());
-        assertEquals("6",number6.getText());
+        assertEquals("6",number6.getText());  // veya da string (Integer.parseInt(number6),6)
 
     }
 
