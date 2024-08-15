@@ -3,8 +3,10 @@ package com.tests.selbstlernen;
 import io.appium.java_client.TouchAction;
 
 public class _1_ {
-
-
+    /* bir test acinca ilk kez, capabilities ayarlarini yazmak gerekir. sonra;
+       1. Assert.assertTrue(driver.isAppInstalled(".........."));    uygulama yuklendi mi diye dogrulanir
+       2. uygulama basarili sekilde acildigini o sayfada herhangi bir locateden dogrulanir. sonra isDisplayed yaparak dogrulariz
+     */
 
     //  driver.activateApp("......");  // var olan uygulamayi acmak icin
     //  Assert.assertTrue(driver.isAppInstalled(".........."));    uygulama yuklendi mi diye kontrol etmek icin
@@ -14,10 +16,7 @@ public class _1_ {
     //  driver.findElementByAccessibilityId("8").click();  mesela 8'e bastim locate olarak id 'sinden aliyorum kolayca
     //  driver.findElementById("....").getText(); // id'Si uzerinden
 
-    /* bir test acinca ilk kez, capabilities ayarlarini yazmak gerekir. sonra;
-       1. Assert.assertTrue(driver.isAppInstalled(".........."));    uygulama yuklendi mi diye dogrulanir
-       2. uygulama basarili sekilde acildigini o sayfada herhangi bir locateden dogrulanir. sonra isDisplayed yaparak dogrulariz
-     */
+
 
    /*  bir sayfada taa asagilardaki bir seye tiklayacak olmak(el harekti ile sayfanin asagisna gitmek)
     TouchAction touchAction = new TouchAction<>(driver);
