@@ -57,7 +57,7 @@ public class _02_SetService {
         System.out.println("number6.getText() = " + number6.getText());
         assertEquals("6",number6.getText());
 
-        driver.closeApp();
+        // driver.closeApp();
 
 
 
