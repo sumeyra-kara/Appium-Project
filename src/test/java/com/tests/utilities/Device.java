@@ -13,11 +13,11 @@ public enum Device {
     );
 
 
-
     public String udid;
     public String deviceName;
     public String version;
     public String platform;
+
     Device(String udid, String deviceName, String version, String platform) {
         this.udid=udid;
         this.deviceName=deviceName;

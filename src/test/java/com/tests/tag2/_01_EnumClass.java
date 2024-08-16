@@ -1,5 +1,7 @@
 package com.tests.tag2;
 
+import com.tests.utilities.App;
+import com.tests.utilities.Device;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -16,6 +18,8 @@ import static org.junit.Assert.assertEquals;
 public class _01_EnumClass {
     AppiumDriver<MobileElement> driver;    // für sowohl ios als auch android
     AppiumDriverLocalService service;
+    Device device = Device.PIXEL_2;
+    App app = App.CALCULATOR;
 
     @Test
     public void test() {
@@ -25,18 +29,18 @@ public class _01_EnumClass {
         service = new AppiumServiceBuilder().withIPAddress("127.0.0.1")//.usingPort(4723)
                 .usingAnyFreePort().build();
 
-        //service.start();
+        service.start();
 
         // Device capabilities
-        capabilities.setCapability(MobileCapabilityType.UDID,"emulator-5554");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel_2");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
-        capabilities.setCapability(MobileCapabilityType.VERSION,"11.0");
+        capabilities.setCapability(MobileCapabilityType.UDID,device.udid);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,device.deviceName);
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, device.platform);
+        capabilities.setCapability(MobileCapabilityType.VERSION,device.version);
 
 
         // application capabilities
-        capabilities.setCapability("appPackage","com.google.android.calculator"); // hangi application uzerinde calismak istiyorsan onun kimligi
-        capabilities.setCapability("appActivity","com.android.calculator2.Calculator"); // uygulamayi actiktan sonra hangi sayfadan baslayacagimizi görmek icin
+        capabilities.setCapability("appPackage",app.appPackage); // hangi application uzerinde calismak istiyorsan onun kimligi
+        capabilities.setCapability("appActivity",app.appActivity); // uygulamayi actiktan sonra hangi sayfadan baslayacagimizi görmek icin
 
         driver= new AppiumDriver<>(service.getUrl(),capabilities); // Verbindung mit der Server
         // http://127.0.0.1:4723/wd/hub     service.getUrl()
@@ -57,7 +61,7 @@ public class _01_EnumClass {
         System.out.println("number6.getText() = " + number6.getText());
         assertEquals("6",number6.getText());
 
-        driver.closeApp();
+
 
 
 
