@@ -10,12 +10,11 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static org.junit.Assert.assertEquals;
 
-public class _01_EnumClass {
+public class _1_EnumClass {
     AppiumDriver<MobileElement> driver;    // für sowohl ios als auch android
     AppiumDriverLocalService service;
     Device device = Device.PIXEL_2;
@@ -23,7 +22,6 @@ public class _01_EnumClass {
 
     @Test
     public void test() {
-
 
         DesiredCapabilities capabilities  = new DesiredCapabilities();
         service = new AppiumServiceBuilder().withIPAddress("127.0.0.1")//.usingPort(4723)

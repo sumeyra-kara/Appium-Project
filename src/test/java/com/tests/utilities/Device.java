@@ -3,15 +3,12 @@ package com.tests.utilities;
 import java.security.PublicKey;
 
 public enum Device {
-
     PIXEL_2(
             "emulator-5554",
             "Pixel_2",
             "11.0",
             "Android"
-
     );
-
 
     public String udid;
     public String deviceName;
