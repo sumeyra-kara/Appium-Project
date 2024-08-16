@@ -1,4 +1,4 @@
-package com.tests.selbstlernen;
+package com.selbstlernen;
 
 import io.appium.java_client.TouchAction;
 
@@ -16,16 +16,34 @@ public class _1_ {
     //  driver.findElementByAccessibilityId("8").click();  mesela 8'e bastim locate olarak id 'sinden aliyorum kolayca
     //  driver.findElementById("....").getText(); // id'Si uzerinden
 
+    // location alma text ile basina @ koyulur mesela xpath olarak = //*[@text='BMW']
+
+    /*KOORDINATLAR UZERINDEN BIR YERE TIKLAMA ICIN
+
+    TouchAction touchAction = new TouchAction<>(driver);
+    touchAction.press(PointOption.point(x,y1))-- bir yere tiklama. buldugumuz x,y koordinati
+                    .release() --  ekrandan parmagi cekme,kaldirma islemi                    y1>y2
+                    .perform() hepsinin calismasi icin gereken komut
+
+     Eger problem bulursa da wait koyariz
+     */
+
+    /*
+    driver.isKeyboardShown();   klavye gozukuyor mu
+    driver.getKeyboard().pressKey("...") ---bir yere yazi göndermek icin
+    driver.findElementById("...").sendKeys("....") --- id'Si su olana yazi gondermek
+
+     */
 
 
-   /*  bir sayfada taa asagilardaki bir seye tiklayacak olmak(el harekti ile sayfanin asagisna gitmek)
+
+   /* **** bir sayfada taa asagilardaki bir seye tiklayacak olmak(el harekti ile sayfanin asagisna gitmek)
     TouchAction touchAction = new TouchAction<>(driver);
     touchAction.press(PointOption.point(x,y1))-- bir yere tiklama. x,y koordinati
                 .waitAction(WaitOptions(Duration.ofMillis(500));  -- asagidan yukariya kadarki gececk bekleme suresi
                 .moveTo(PointOption.point(x,y2)) -- yukarinin x,y koordinatlari  (yukariya kaldirmis olduk)
-                .release() --  ekrandan parmagi cekme,kaldirma islemi
+                .release() --  ekrandan parmagi cekme,kaldirma islemi                    y1>y2
                 .perform() hepsinin calismasi icin gereken komut (boylece ekran yukaridan asgiya kaydi)
-
 
     **** eger tam en yukari da getirmek istersek, koordinat degelerini degistirmek lazim
     touchAction.press(PointOption.point(x,y2))-- bir yere tiklama. x,y koordinati
@@ -33,8 +51,6 @@ public class _1_ {
                 .moveTo(PointOption.point(x,y1)) -- asaginin x,y koordinatlari  (yukariya kaldirmis olduk)
                 .release() --  ekrandan parmagi cekme,kaldirma islemi
                 .perform() hepsinin calismasi icin gereken komut (boylece ekran asagiidan yukariya kaydi)
-
-
     */
 
 

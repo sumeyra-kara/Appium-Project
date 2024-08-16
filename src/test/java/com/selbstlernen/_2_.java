@@ -1,4 +1,4 @@
-package com.tests.selbstlernen;
+package com.selbstlernen;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
