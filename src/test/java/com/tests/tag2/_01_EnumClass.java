@@ -1,4 +1,4 @@
-package com.tests;
+package com.tests.tag2;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
@@ -6,33 +6,33 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import static org.junit.Assert.assertEquals;
 
-public class _02_SetService {
-
+public class _01_EnumClass {
     AppiumDriver<MobileElement> driver;    // für sowohl ios als auch android
     AppiumDriverLocalService service;
 
     @Test
-    public void test() throws MalformedURLException {
+    public void test() {
+
 
         DesiredCapabilities capabilities  = new DesiredCapabilities();
         service = new AppiumServiceBuilder().withIPAddress("127.0.0.1")//.usingPort(4723)
-                                            .usingAnyFreePort().build();
+                .usingAnyFreePort().build();
+
+        //service.start();
 
         // Device capabilities
+        capabilities.setCapability(MobileCapabilityType.UDID,"emulator-5554");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel_2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         capabilities.setCapability(MobileCapabilityType.VERSION,"11.0");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel_2");
+
 
         // application capabilities
         capabilities.setCapability("appPackage","com.google.android.calculator"); // hangi application uzerinde calismak istiyorsan onun kimligi
@@ -58,7 +58,6 @@ public class _02_SetService {
         assertEquals("6",number6.getText());
 
         driver.closeApp();
-
 
 
 
