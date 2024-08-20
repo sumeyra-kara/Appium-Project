@@ -19,7 +19,6 @@ public class _01_Calculator {
 
     AppiumDriver<MobileElement> driver;    // für sowohl ios als auch android
 
-
     @Test
     public void test() throws MalformedURLException {
 

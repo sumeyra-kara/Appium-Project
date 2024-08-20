@@ -15,7 +15,7 @@ public class Driver {
     static AppiumDriverLocalService service;
 
 
-    public static void runAppium(){
+    public static void runAppium(){  // für service
         service = new AppiumServiceBuilder().withIPAddress("127.0.0.1")//.usingPort(4723)
                 .usingAnyFreePort().build();
         service.start();

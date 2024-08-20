@@ -10,11 +10,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-
 import static org.junit.Assert.assertEquals;
 
 public class _2_DriverClass {
-
     AppiumDriver<MobileElement> driver;
     Device device = Device.PIXEL_2;
     App app = App.CALCULATOR;
@@ -23,7 +21,6 @@ public class _2_DriverClass {
     public void setUp() {
         Driver.runAppium();
         driver = Driver.getDriver(device, app); // Driver.getDriver(Device.PIXEL_2,App.CALCULATOR);
-
     }
 
     @After
